@@ -1,0 +1,4 @@
+[core]
+    remote = remotedata
+['remote "remotedata"']
+    url = C:/Users/warboled/OneDrive - Grupo Bancolombia/DICAGI/Prueba_Modelos
