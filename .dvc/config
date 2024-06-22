@@ -1,4 +1,4 @@
 [core]
-    remote = remotedata
-['remote "remotedata"']
-    url = C:/Users/warboled/OneDrive - Grupo Bancolombia/DICAGI/Prueba_Modelos
+    remote = storage
+['remote "storage"']
+    url = https://bancolombia-my.sharepoint.com/:f:/r/personal/warboled_bancolombia_com_co/Documents/DICAGI/Prueba_Modelos?csf=1&web=1&e=RxhOBH

@@ -24,7 +24,7 @@ SELECT
     MIN(vlr_vencido) AS min_dia_vlr_vencido,
     STDDEV_POP(vlr_vencido) AS stddevpop_dia_vlr_vencido
 
-FROM prueba_op_saldos_diarios_cob_enmascarado_completa
+FROM proceso_enmascarado.prueba_op_saldos_diarios_cob_enmascarado_completa
 GROUP BY nit_enmascarado,
          num_oblig_enmascarado,
          fecha_corte
