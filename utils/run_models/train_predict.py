@@ -1,12 +1,12 @@
 import pandas as pd
 from pycaret.classification import *
 
-def train_model(data, target):
-    s = setup(data, target = target, n_jobs= -1, session_id=123, log_experiment=True, experiment_name="base")
-    best = compare_models(sort = 'f1', fold = 5, include = ['lr', 'dt', 'svm', 'rf', 'catboost'], n_select= 3)
+def train_model(data, target, experiment_name):
+    s = setup(data, target = target, n_jobs= -1, session_id=123, log_experiment=True, experiment_name=experiment_name)
+    best = compare_models(sort = 'f1', fold = 5, include = ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lightgbm'], n_select= 3)
     return best
 
-def predict_model(model, data_calification, vars_model, scaler = None):
+def calification_model(model, data_calification, vars_model, scaler = None):
 
     data_calification_ = data_calification[vars_model]
     
