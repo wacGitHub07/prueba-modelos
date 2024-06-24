@@ -9,7 +9,8 @@ SELECT
     t2.valor_cuota_mes,
     t2.pago_total,
     t2.porc_pago,
-    t2.marca_pago
+    t2.marca_pago,
+    t2.ajustes_banco
 FROM {proccess_zone}.pmod_obligaciones_cruce t1
 LEFT JOIN {proccess_zone}.maestro_cuotas t2
        ON t1.nit_enmascarado = t2.nit_enmascarado

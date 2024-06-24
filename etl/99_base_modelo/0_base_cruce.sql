@@ -20,14 +20,22 @@ WITH obligaciones AS (
 )
 SELECT 
     t1.*,
-    t2.marca_pago
+    t2.marca_pago,
+    t2.ajustes_banco,
+    t3.lote
 FROM obligaciones t1
 LEFT JOIN {proccess_zone}.pmod_maestro_cuotas_obligaciones t2
        ON t1.nit_enmascarado = t2.nit_enmascarado
       AND t1.num_oblig_orig_enmascarado = t2.num_oblig_orig_enmascarado
       AND t1.num_oblig_enmascarado = t2.num_oblig_enmascarado
       AND t1.fecha_var_rpta_alt = t2.fecha_var_rpta_alt
+LEFT JOIN {proccess_zone}.pmod_pd_obligaciones t3
+       ON t1.nit_enmascarado = t3.nit_enmascarado
+      AND t1.num_oblig_orig_enmascarado = t3.num_oblig_orig_enmascarado
+      AND t1.num_oblig_enmascarado = t3.num_oblig_enmascarado
+      AND t1.fecha_var_rpta_alt = t3.fecha_var_rpta_alt
 WHERE t2.d_meses = 1
+  AND t3.d_meses = 1
 ;
 
 COMPUTE STATS {proccess_zone}.pmod_base_cruce;

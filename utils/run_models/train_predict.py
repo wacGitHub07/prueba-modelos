@@ -7,7 +7,7 @@ def train_model(data, target, models = ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lig
               n_jobs= -1,
             #   remove_multicollinearity = True, 
             #   multicollinearity_threshold = 0.8,
-              remove_outliers = True,
+            #   remove_outliers = True,
               session_id=123)
     best = compare_models(sort = 'f1', fold = 5, include = models, n_select= 3)
     return best
