@@ -6,23 +6,21 @@ SELECT
     num_oblig_enmascarado,
     year*100 + month as fecha_corte,
     
-    AVG(sld_cap_final) AS avg_dia_sld_cap_final,
+    AVG(sld_cap_final) AS avg_sld_cap_final,
     MAX(sld_cap_final) AS max_dia_sld_cap_final,
     MIN(sld_cap_final) AS min_sld_cap_final,
-    STDDEV_POP(sld_cap_final) AS stddevpop_dia_sld_cap_final,
 
-    MAX(nueva_altura_mora) AS max_dia_nueva_altura_mora,
-    MIN(nueva_altura_mora) AS min_dia_nueva_altura_mora,
+    AVG(nueva_altura_mora) AS avg_nueva_altura_mora,
+    MAX(nueva_altura_mora) AS max_nueva_altura_mora,
+    MIN(nueva_altura_mora) AS min_nueva_altura_mora,
     
-    AVG(vlr_obligacion) AS avg_dia_vlr_obligacion,
-    MAX(vlr_obligacion) AS max_dia_vlr_obligacion,
-    MIN(vlr_obligacion) AS min_dia_vlr_obligacion,
-    STDDEV_POP(vlr_obligacion) AS stddevpop_dia_vlr_obligacion,
+    AVG(vlr_obligacion) AS avg_vlr_obligacion,
+    MAX(vlr_obligacion) AS max_vlr_obligacion,
+    MIN(vlr_obligacion) AS min_vlr_obligacion,
     
-    AVG(vlr_vencido) AS avg_dia_vlr_vencido,
-    MAX(vlr_vencido) AS max_dia_vlr_vencido,
-    MIN(vlr_vencido) AS min_dia_vlr_vencido,
-    STDDEV_POP(vlr_vencido) AS stddevpop_dia_vlr_vencido
+    AVG(vlr_vencido) AS avg_vlr_vencido,
+    MAX(vlr_vencido) AS max_vlr_vencido,
+    MIN(vlr_vencido) AS min_vlr_vencido
 
 FROM proceso_enmascarado.prueba_op_saldos_diarios_cob_enmascarado_completa
 GROUP BY nit_enmascarado,

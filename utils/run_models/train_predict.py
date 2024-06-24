@@ -1,9 +1,15 @@
 import pandas as pd
 from pycaret.classification import *
 
-def train_model(data, target, experiment_name):
-    s = setup(data, target = target, n_jobs= -1, session_id=123, log_experiment=True, experiment_name=experiment_name)
-    best = compare_models(sort = 'f1', fold = 5, include = ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lightgbm'], n_select= 3)
+def train_model(data, target, models = ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lightgbm']):
+    s = setup(data, 
+              target = target, 
+              n_jobs= -1,
+            #   remove_multicollinearity = True, 
+            #   multicollinearity_threshold = 0.8,
+              remove_outliers = True,
+              session_id=123)
+    best = compare_models(sort = 'f1', fold = 5, include = models, n_select= 3)
     return best
 
 def calification_model(model, data_calification, vars_model, scaler = None):

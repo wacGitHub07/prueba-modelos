@@ -4,6 +4,6 @@ STORED AS PARQUET AS
 SELECT
     *
 FROM {proccess_area_zone}.pmod_replica_12
-WHERE d_meses = 1
+WHERE d_meses BETWEEN 1 AND 6
 ;
-COMPUTE STATS {proccess_zone}.pmod_obligaciones;
+COMPUTE STATS {proccess_zone}.pmod_obligaciones_cruce;
