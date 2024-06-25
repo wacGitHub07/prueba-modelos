@@ -1,6 +1,14 @@
 import pandas as pd
 
 def outlier(data: pd.DataFrame) -> pd.DataFrame:
+    """Calculo de outliers por método de IQR  y eliminación de los mismos.
+
+    Args:
+        data (pd.DataFrame): dataset
+
+    Returns:
+        pd.DataFrame: dataset sin outliers
+    """
     # 1. Calcular el IQR
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)

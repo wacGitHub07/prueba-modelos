@@ -1,3 +1,6 @@
+/*
+    Cruce de la base de obligaciones replicada con el módulo de maestro de clientes
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_mcd_obligaciones PURGE;
 CREATE TABLE {proccess_zone}.pmod_mcd_obligaciones
 STORED AS PARQUET AS

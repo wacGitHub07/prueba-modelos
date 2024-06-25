@@ -1,3 +1,6 @@
+/*
+    Queries pivote para la replica de registros n meses
+*/
 drop table if exists {proccess_zone}.{pref}_fechas_anio purge
 ;
 create table {proccess_zone}.{pref}_fechas_anio 

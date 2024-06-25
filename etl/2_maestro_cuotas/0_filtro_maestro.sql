@@ -1,3 +1,7 @@
+/*
+    Seleccion de las variables de interés de la base de maestro de cuotas
+    Se eliminan los registros repetidos por pago_total
+*/
 DROP TABLE IF EXISTS proceso.maestro_cuotas PURGE;
 CREATE TABLE proceso.maestro_cuotas
 STORED AS PARQUET AS

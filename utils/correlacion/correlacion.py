@@ -2,8 +2,17 @@ import pandas as pd
 import numpy as np
 
 
-# Función para eliminar variables altamente correlacionadas
+# 
 def remove_highly_correlated_features(df, threshold=0.9):
+    """Función para eliminar variables altamente correlacionadas
+
+    Args:
+        df (DataFrame): dataset
+        threshold (float, optional): Valor de eliminación por correlación. Defaults to 0.9.
+
+    Returns:
+        tuple: DataFrame limpio y lista de variables eliminadas
+    """
     # Calcular la matriz de correlación
     corr_matrix = df.corr().abs()
     

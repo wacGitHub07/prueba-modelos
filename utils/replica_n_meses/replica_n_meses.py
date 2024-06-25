@@ -3,12 +3,12 @@ from helper.helper import Helper
 import os
 
 def replica(helper: Helper, f_ini: int, f_fin: int, params_sql: dict) -> None:
-    """_summary_
+    """Función que replica los datos de un intervalo de fechas en un esquema de base de datos.
 
     Args:
-        helper (Helper): _description_
-        f_ini (int): _description_
-        f_fin (int): _description_
+        helper (Helper): instancia de impala-helper
+        f_ini (int): fecha inicial de replica
+        f_fin (int): fecha_final de réplica
     """
     f_analisis_ = []
     anios = []

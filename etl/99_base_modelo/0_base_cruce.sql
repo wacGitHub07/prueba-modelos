@@ -1,3 +1,6 @@
+/*
+      Base de obligaciones con las variables categoricas
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_base_cruce PURGE;
 CREATE TABLE {proccess_zone}.pmod_base_cruce
 STORED AS PARQUET AS

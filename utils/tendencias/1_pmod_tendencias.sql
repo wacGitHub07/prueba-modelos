@@ -1,14 +1,6 @@
-/******************************************************************/
-/*Autores:        Walter Arboleda Castañeda - warboled                                             
-  Fecha creación: 09/11/2019                                                                                                                             
-  Descripción:    Calculo de tendencias para los modulos fic              
-  
-  Input:          - tabla a calcular {TABLA}
-  
-  Output:         - {proccess_zone}.{pref}_tendencias                                                                                                       
-
-  Actualización:                                                  */                                                                                                                                 
-/******************************************************************/
+/*
+   Queries para el cálculo de tendencias
+*/
 
 /* Se calculan 12 variables para verificar en cual
    de los 12 meses esta presente la variable, de lo contrario

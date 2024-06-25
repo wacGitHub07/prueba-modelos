@@ -1,3 +1,7 @@
+/*
+    Tabla temporal con las principales variables de cruce
+    Incluyendo la muestra fuera de tiempo para calcular las variables de toda la muestra
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_obligaciones PURGE;
 CREATE TABLE {proccess_zone}.pmod_obligaciones
 PARTITIONED BY (fecha_var_rpta_alt)

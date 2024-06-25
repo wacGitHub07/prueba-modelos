@@ -2,28 +2,20 @@ import pandas as pd
 from pycaret.classification import *
 
 def train_model(data, target, models = ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lightgbm']):
+    """Función para entrenamiento de modelos por medio de pycaret
+
+    Args:
+        data (_type_): dataset de entrenamiento
+        target (_type_): variable objetivo
+        models (list, optional): lista con los algoritmos a ejecutar. Defaults to ['lr', 'dt', 'svm', 'rf', 'xgboost', 'lightgbm'].
+
+    Returns:
+        Any: resultado de la comparación de modelos
+    """
     s = setup(data, 
               target = target, 
               n_jobs= -1,
               session_id=123)
     best = compare_models(sort = 'f1', fold = 5, include = models, n_select= 3)
     return best
-
-def calification_model(model, data_calification, vars_model, scaler = None):
-
-    data_calification_ = data_calification[vars_model]
-    
-    if scaler:
-        data_calif_norm = data_calification_
-        data_calif_norm = scaler.transform(data_calification_.values)
-        data_calif_norm = pd.DataFrame(data_calif_norm, columns=vars_model)
-    else:
-        data_calif_norm = data_calification_
-    
-
-    predictios = predict_model(model, data=data_calif_norm, raw_score=True)
-    
-    data_calification["var_rpta_alt"] = predictios["prediction_label"].values
-    data_calification["prediction_score_1"] = predictios["prediction_score_1"].values
-    return data_calification
     

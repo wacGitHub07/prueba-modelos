@@ -1,3 +1,7 @@
+/*
+    Selección de las variables de interés de la base de saldos diarios
+    Se calculas las métricas de AVG, MAX y MIN para tener valores mensuales
+*/
 DROP TABLE IF EXISTS proceso.pmod_saldo_diario_add_dia PURGE;
 CREATE TABLE proceso.pmod_saldo_diario_add_dia
 STORED AS PARQUET AS

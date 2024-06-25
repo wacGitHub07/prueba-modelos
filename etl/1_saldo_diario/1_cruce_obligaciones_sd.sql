@@ -1,3 +1,6 @@
+/*
+    Cruce de la base de obligaciones replicada con el módulo de saldos diarios
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_saldo_diario_obligacion PURGE;
 CREATE TABLE {proccess_zone}.pmod_saldo_diario_obligacion
 STORED AS PARQUET AS

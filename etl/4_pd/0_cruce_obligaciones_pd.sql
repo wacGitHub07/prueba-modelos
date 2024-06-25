@@ -1,3 +1,7 @@
+/*
+    Seleccion de las variables de interés de la base de probalidadaes
+    Cruce con la base de obligaciones replicada
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_pd_obligaciones PURGE;
 CREATE TABLE {proccess_zone}.pmod_pd_obligaciones
 STORED AS PARQUET AS

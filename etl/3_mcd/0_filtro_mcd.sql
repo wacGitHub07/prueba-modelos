@@ -1,3 +1,7 @@
+/*
+    Selección de las variables de interés del maestro de clientes
+    Eliminacion de datos repetidos por total_ing
+*/
 DROP TABLE IF EXISTS {proccess_zone}.pmod_mcd PURGE;
 CREATE TABLE {proccess_zone}.pmod_mcd
 STORED AS PARQUET AS

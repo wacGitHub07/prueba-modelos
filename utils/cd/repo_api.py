@@ -11,18 +11,26 @@ import shutil
 import os
 import base64
 
-# De-serialize an object from a plain text
 def txt_to_obj(txt):
+    """_summary_
+
+    Args:
+        txt (_type_): Función para convertir un txt en un objeto
+
+    Returns:
+        obj: objeto deserializado
+    """
     base64_bytes = txt.encode('ascii')
     message_bytes = base64.b64decode(base64_bytes)
     obj = pickle.loads(message_bytes)
     return obj
 
 data = None # Datos de predicción
-personal_access_token = 'azure_token'
-organization_url = 'https://dev.azure.com/GrupoBancolombia/'
-project_name = 'Vicepresidencia de Innovación y Transformación Digital'
+personal_access_token = 'azure_token' # Token de acceso del ejecutor
+organization_url = 'https://dev.azure.com/GrupoBancolombia/' # Organización en Azure DevOps
+project_name = 'Vicepresidencia de Innovación y Transformación Digital' # Proyecto en Azure DevOps
 
+# Autenticación api
 credentials = BasicAuthentication('', personal_access_token)
 connection = Connection(base_url=organization_url, creds=credentials)
 
@@ -31,8 +39,9 @@ git_client = connection.clients.get_git_client()
 
 repositories = git_client.get_repositories(project_name)
 
+# Busqueda de repositorio
 for repo in repositories:
-    if repo.name == 'vitd-curso':
+    if repo.name == 'repo_name': # Nombre del repositorio a monitorear
         print(repo.name)
         print(repo.id)
         print(repo.default_branch)
@@ -70,6 +79,7 @@ current_date = update_date
 current_commit = commit_id
 current_model = txt_to_obj(file_content.content)
 
+# Ciclo de monitoreo de cambioa en el modelo
 while True:
     file_content = git_client.get_item(
     repository_id,
